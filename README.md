@@ -3,7 +3,7 @@
 A lightweight Node.js command-line calculator created for UCS 745 Cloud and DevOps Lab.
 
 ## Supported Operations
-- Basic arithmetic: add, subtract, multiply, divide
+- Scientific & arithmetic mode: add, subtract, multiply, divide, modulo, sqrt
 
 ## Usage
 ```bash
