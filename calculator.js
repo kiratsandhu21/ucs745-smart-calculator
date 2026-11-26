@@ -1,7 +1,8 @@
-// Smart CLI Calculator - Base Version
+// Smart CLI Calculator - Precision Rounding Update
 
 function formatResult(op, a, b, result) {
-  return `${a} ${op} ${b} = ${result}`;
+  const rounded = Number(result.toFixed(2));
+  return `[Rounded] ${a} ${op} ${b} = ${rounded}`;
 }
 
 function calculate(op, a, b) {
@@ -15,6 +16,8 @@ function calculate(op, a, b) {
     case 'div':
       if (b === 0) return 'Error: Division by zero';
       return formatResult('/', a, b, a / b);
+    case 'pow':
+      return formatResult('^', a, b, Math.pow(a, b));
     default:
       return `Error: Unsupported operation '${op}'`;
   }
@@ -23,6 +26,7 @@ function calculate(op, a, b) {
 if (require.main === module) {
   console.log(calculate('add', 12, 8));
   console.log(calculate('div', 10, 3));
+  console.log(calculate('pow', 2, 5));
 }
 
 module.exports = { calculate, formatResult };
